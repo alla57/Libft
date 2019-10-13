@@ -1,34 +1,23 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_memmove.c                                       :+:      :+:    :+:   */
+/*   ft_memcmp.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: alboumed <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2019/10/12 14:49:59 by alboumed          #+#    #+#             */
-/*   Updated: 2019/10/13 14:41:35 by alboumed         ###   ########.fr       */
+/*   Created: 2019/10/13 15:09:45 by alboumed          #+#    #+#             */
+/*   Updated: 2019/10/13 15:29:55 by alboumed         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-void	*ft_memmove(void *dest, const void *src, size_t len)
+int		ft_memcmp(const void *s1, const void *s2, size_t n)
 {
 	int i;
 
 	i = 0;
-	if (-(dest - src) <= len)
+	while (((unsigned char*)s1)[i] == ((unsigned char*)s2)[i] && i < n)
 	{
-			while (i < len)
-			{
-				((char*)dest)[i] = ((char*)src)[i];
-				i++;
-			}
-			return (dest);
+		i++;
 	}
-	i = len - 1;
-	while (i >= 0)
-	{
-		((char*)dest)[i] = ((char*)src)[i];
-		i--;
-	}
-	return (dest);
+	return (((unsigned char*)s1)[i] - ((unsigned char*)s2)[i]);
 }

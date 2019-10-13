@@ -1,34 +1,21 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_memmove.c                                       :+:      :+:    :+:   */
+/*   memchr.c                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: alboumed <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2019/10/12 14:49:59 by alboumed          #+#    #+#             */
-/*   Updated: 2019/10/13 14:41:35 by alboumed         ###   ########.fr       */
+/*   Created: 2019/10/13 14:42:48 by alboumed          #+#    #+#             */
+/*   Updated: 2019/10/13 15:08:13 by alboumed         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-void	*ft_memmove(void *dest, const void *src, size_t len)
+void	*ft_memchr(const void *s, int c, size_t n)
 {
 	int i;
 
 	i = 0;
-	if (-(dest - src) <= len)
-	{
-			while (i < len)
-			{
-				((char*)dest)[i] = ((char*)src)[i];
-				i++;
-			}
-			return (dest);
-	}
-	i = len - 1;
-	while (i >= 0)
-	{
-		((char*)dest)[i] = ((char*)src)[i];
-		i--;
-	}
-	return (dest);
+	while (i < n && (unsigned char)c != ((unsigned char*)s)[i])
+		i++;
+	return ((void*)s + i);
 }

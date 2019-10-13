@@ -1,34 +1,19 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_memmove.c                                       :+:      :+:    :+:   */
+/*   ft_isalnum.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: alboumed <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2019/10/12 14:49:59 by alboumed          #+#    #+#             */
-/*   Updated: 2019/10/13 14:41:35 by alboumed         ###   ########.fr       */
+/*   Created: 2019/10/13 16:17:30 by alboumed          #+#    #+#             */
+/*   Updated: 2019/10/13 16:24:05 by alboumed         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-void	*ft_memmove(void *dest, const void *src, size_t len)
+int		ft_isalnum(int c)
 {
-	int i;
-
-	i = 0;
-	if (-(dest - src) <= len)
-	{
-			while (i < len)
-			{
-				((char*)dest)[i] = ((char*)src)[i];
-				i++;
-			}
-			return (dest);
-	}
-	i = len - 1;
-	while (i >= 0)
-	{
-		((char*)dest)[i] = ((char*)src)[i];
-		i--;
-	}
-	return (dest);
+	if ((c >= 'A' && c <= && 'Z') || (c >= 'a' && c <= 'z') ||
+			(c >= '0' && c <= '9'))
+		return 1;
+	return (0);
 }
