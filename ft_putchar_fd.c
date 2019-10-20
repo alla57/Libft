@@ -1,41 +1,18 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_itoa.c                                          :+:      :+:    :+:   */
+/*   ft_putchar.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: alboumed <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2019/10/19 11:21:03 by alboumed          #+#    #+#             */
-/*   Updated: 2019/10/20 14:50:55 by alboumed         ###   ########.fr       */
+/*   Created: 2019/10/20 15:53:21 by alboumed          #+#    #+#             */
+/*   Updated: 2019/10/20 16:06:03 by alboumed         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <stdlib.h>
+#include <unistd.h>
 
-char	*ft_itoa(int n)
+void	ft_putchar_fd(char c, int fd)
 {
-	int		i;
-	int		temp;
-	char	*s;
-
-	i = 0;
-	if (n <= 0)
-		i++;
-	temp = n;
-	temp *= 10;
-	while (temp /= 10)
-		i++;
-	if (!(s = malloc(sizeof(char) * (i + 1))))
-		return (NULL);
-	s[i] = '\0';
-	if (n == 0)
-		s[0] = '0';
-	if (n < 0)
-		s[0] = '-';
-	while (--i >= 0 && n != 0)
-	{
-		s[i] = ((n >= 0) ? 1 : -1) * (n % 10) + '0';
-		n = n / 10;
-	}
-	return (s);
+	write(fd, &c, 1);
 }

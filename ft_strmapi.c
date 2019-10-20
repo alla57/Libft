@@ -1,41 +1,32 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_itoa.c                                          :+:      :+:    :+:   */
+/*   ft_strmapi.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: alboumed <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2019/10/19 11:21:03 by alboumed          #+#    #+#             */
-/*   Updated: 2019/10/20 14:50:55 by alboumed         ###   ########.fr       */
+/*   Created: 2019/10/20 14:51:54 by alboumed          #+#    #+#             */
+/*   Updated: 2019/10/20 15:52:35 by alboumed         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <stdlib.h>
 
-char	*ft_itoa(int n)
+char	*ft_strmapi(char const *s, char (*f)(unsigned int, char))
 {
-	int		i;
-	int		temp;
-	char	*s;
+	char			*dest;
+	unsigned int	i;
 
 	i = 0;
-	if (n <= 0)
+	while (s[i])
 		i++;
-	temp = n;
-	temp *= 10;
-	while (temp /= 10)
-		i++;
-	if (!(s = malloc(sizeof(char) * (i + 1))))
-		return (NULL);
-	s[i] = '\0';
-	if (n == 0)
-		s[0] = '0';
-	if (n < 0)
-		s[0] = '-';
-	while (--i >= 0 && n != 0)
+	dest = malloc(sizeof(char) * (i + 1));
+	dest[i] = '\0';
+	i = 0;
+	while (s[i])
 	{
-		s[i] = ((n >= 0) ? 1 : -1) * (n % 10) + '0';
-		n = n / 10;
+		dest[i] = (*f)(i, s[i]);
+		i++;
 	}
-	return (s);
+	return (dest);
 }
