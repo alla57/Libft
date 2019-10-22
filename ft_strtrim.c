@@ -6,11 +6,12 @@
 /*   By: alboumed <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/10/17 11:23:24 by alboumed          #+#    #+#             */
-/*   Updated: 2019/10/18 18:08:08 by alboumed         ###   ########.fr       */
+/*   Updated: 2019/10/22 20:36:50 by alboumed         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <stdlib.h>
+#include "libft.h"
 
 int		*ft_trim(const char *s1, const char *set, int i, int j)
 {
