@@ -6,7 +6,7 @@
 /*   By: alboumed <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/10/17 11:23:24 by alboumed          #+#    #+#             */
-/*   Updated: 2019/10/22 20:36:50 by alboumed         ###   ########.fr       */
+/*   Updated: 2019/10/23 15:05:26 by alboumed         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -50,6 +50,7 @@ char	*ft_strtrim(const char *s1, const char *set)
 	char	*dest;
 
 	i = 0;
+	j = 0;
 	size = ft_trim(s1, set, i, j);
 	dest = malloc(sizeof(char) * (size[1] - size[0] + 2));
 	while (i < (size[1] - size[0] + 1))

@@ -6,9 +6,11 @@
 /*   By: alboumed <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/10/22 19:26:55 by alboumed          #+#    #+#             */
-/*   Updated: 2019/10/22 19:59:21 by alboumed         ###   ########.fr       */
+/*   Updated: 2019/10/22 20:39:23 by alboumed         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
+
+#include <stddef.h>
 
 int		ft_atoi(const char *str);
 void	*ft_bzero(void *s, size_t n);

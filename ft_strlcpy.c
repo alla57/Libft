@@ -6,7 +6,7 @@
 /*   By: alboumed <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/10/14 11:42:41 by alboumed          #+#    #+#             */
-/*   Updated: 2019/10/22 20:34:42 by alboumed         ###   ########.fr       */
+/*   Updated: 2019/10/23 15:00:59 by alboumed         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 
 size_t	ft_strlcpy(char *dest, const char *src, size_t dstsize)
 {
-	int		i;
+	size_t	i;
 	size_t	j;
 
 	i = 0;

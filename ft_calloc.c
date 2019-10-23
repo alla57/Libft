@@ -6,7 +6,7 @@
 /*   By: alboumed <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/10/16 17:55:08 by alboumed          #+#    #+#             */
-/*   Updated: 2019/10/22 20:19:53 by alboumed         ###   ########.fr       */
+/*   Updated: 2019/10/22 20:40:18 by alboumed         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,7 +15,7 @@
 
 void	*ft_calloc(size_t count, size_t size)
 {
-	int		i;
+	size_t		i;
 	void	*dest;
 
 	i = 0;

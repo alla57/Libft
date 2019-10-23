@@ -6,7 +6,7 @@
 /*   By: alboumed <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/10/13 18:30:37 by alboumed          #+#    #+#             */
-/*   Updated: 2019/10/22 20:33:41 by alboumed         ###   ########.fr       */
+/*   Updated: 2019/10/23 14:58:19 by alboumed         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,6 +20,6 @@ char	*ft_strchr(const char *s, int c)
 	while (s[i] != c && s[i] != '\0')
 		i++;
 	if (s[i] == c)
-		return ((char)s + i);
+		return ((char*)s + i);
 	return (NULL);
 }
