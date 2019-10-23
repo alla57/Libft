@@ -6,11 +6,14 @@
 /*   By: alboumed <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/10/22 19:26:55 by alboumed          #+#    #+#             */
-/*   Updated: 2019/10/22 20:39:23 by alboumed         ###   ########.fr       */
+/*   Updated: 2019/10/23 15:16:10 by alboumed         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <stddef.h>
+#ifndef LIBFT_H
+# define LIBFT_H
+
+# include <stddef.h>
 
 int		ft_atoi(const char *str);
 void	*ft_bzero(void *s, size_t n);
@@ -40,9 +43,11 @@ size_t	ft_strlcpy(char *dest, const char *src, size_t dstsize);
 size_t	ft_strlen(const char *s);
 char	*ft_strmapi(char const *s, char (*f)(unsigned int, char));
 int		ft_strncmp(const char *s1, const char *s2, size_t n);
-char	*ft_strnstr(const char *haystack,const char *needle, size_t len);
+char	*ft_strnstr(const char *haystack, const char *needle, size_t len);
 char	*ft_strrchr(const char *s, int c);
 char	*ft_strtrim(const char *s1, const char *set);
 char	*ft_substr(char const *s, unsigned int start, size_t len);
 int		ft_tolower(int c);
 int		ft_toupper(int c);
+
+#endif
