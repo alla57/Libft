@@ -6,7 +6,7 @@
 /*   By: alboumed <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/10/17 09:12:12 by alboumed          #+#    #+#             */
-/*   Updated: 2019/10/22 20:33:58 by alboumed         ###   ########.fr       */
+/*   Updated: 2019/10/23 16:12:18 by alboumed         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,7 +21,8 @@ char	*ft_strdup(const char *s1)
 	i = 0;
 	while (s1[i])
 		i++;
-	dest = malloc(sizeof(char) * i);
+	if (!(dest = malloc(sizeof(char) * i)))
+		return (NULL);
 	while (i >= 0)
 	{
 		dest[i] = s1[i];
