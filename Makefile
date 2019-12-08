@@ -6,7 +6,7 @@
 #    By: alboumed <marvin@42.fr>                    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2019/10/13 12:42:16 by alboumed          #+#    #+#              #
-#    Updated: 2019/12/08 18:22:46 by alboumed         ###   ########.fr        #
+#    Updated: 2019/12/08 18:55:52 by alboumed         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -86,6 +86,7 @@ bonus	 :	$(OBJ_BNS)
 
 clean :
 			$(RM) $(OBJS)
+			$(RM) $(OBJ_BNS)
 
 fclean :	clean
 			$(RM) $(NAME)
