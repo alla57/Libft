@@ -6,7 +6,7 @@
 /*   By: alboumed <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/10/19 11:21:03 by alboumed          #+#    #+#             */
-/*   Updated: 2019/10/22 20:21:33 by alboumed         ###   ########.fr       */
+/*   Updated: 2019/11/19 18:56:50 by alboumed         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,11 +19,10 @@ char	*ft_itoa(int n)
 	int		temp;
 	char	*s;
 
-	i = 0;
-	if (n <= 0)
+	i = 1;
+	if (n < 0)
 		i++;
 	temp = n;
-	temp *= 10;
 	while (temp /= 10)
 		i++;
 	if (!(s = malloc(sizeof(char) * (i + 1))))

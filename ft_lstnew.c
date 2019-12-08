@@ -1,28 +1,25 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_memcpy.c                                        :+:      :+:    :+:   */
+/*   ft_lstnew.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: alboumed <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2019/10/12 10:30:13 by alboumed          #+#    #+#             */
-/*   Updated: 2019/11/17 15:45:56 by alboumed         ###   ########.fr       */
+/*   Created: 2019/11/22 17:59:12 by alboumed          #+#    #+#             */
+/*   Updated: 2019/11/22 17:59:59 by alboumed         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
+#include <stdlib.h>
 #include "libft.h"
 
-void	*ft_memcpy(void *dest, const void *src, size_t n)
+t_list	*ft_lstnew(void *content)
 {
-	size_t i;
+	t_list *list;
 
-	if (!dest && !src)
+	if(!(list = malloc(sizeof(*list))))
 		return (NULL);
-	i = 0;
-	while (i < n)
-	{
-		((char*)dest)[i] = ((unsigned char*)src)[i];
-		i++;
-	}
-	return (dest);
+	list->content = content;
+	list->next = NULL;
+	return (list);
 }

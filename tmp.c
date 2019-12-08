@@ -6,31 +6,12 @@
 /*   By: alboumed <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/10/17 11:23:24 by alboumed          #+#    #+#             */
-/*   Updated: 2019/11/22 17:39:18 by alboumed         ###   ########.fr       */
+/*   Updated: 2019/11/22 17:27:03 by alboumed         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <stdlib.h>
 #include "libft.h"
-
-int		*ft_trim2(const char *s1, const char *set, int *size)
-{
-	size_t	i;
-	size_t	j;
-
-	i = ft_strlen(s1);
-	while (i > 0)
-	{
-		j = 0;
-		--i;
-		while (s1[i] != set[j] && set[j])
-			j++;
-		if (set[j] == '\0')
-			break ;
-	}
-	size[1] = i;
-	return (size);
-}
 
 int		*ft_trim(const char *s1, const char *set, int *size)
 {
@@ -48,10 +29,19 @@ int		*ft_trim(const char *s1, const char *set, int *size)
 		++i;
 	}
 	size[0] = i;
-	size[1] = size[0] - 1;
-	if (s1[i] == '\0')
+	if (s1[i] == '\0' && (size[1] = size[0] - 1))
 		return (size);
-	ft_trim2(s1, set, size);
+	i = ft_strlen(s1);
+	while (i > 0)
+	{
+		j = 0;
+		--i;
+		while (s1[i] != set[j] && set[j])
+			j++;
+		if (set[j]  == '\0')
+			break ;
+	}
+	size[1] = i;
 	return (size);
 }
 
@@ -80,4 +70,19 @@ char	*ft_strtrim(const char *s1, const char *set)
 	}
 	dest[i] = '\0';
 	return (dest);
+}
+#include <stdio.h>
+int main()
+{
+	char s1[] = "j";
+	char set[] = "je";
+	char *s2;
+	int i = 0;
+	s2 = ft_strtrim(s1, set);
+	printf("%s", s2);
+	while (s2[i])
+		i++;
+	//printf("\n%d", i);
+	//printf("\n%c", s2[0]);
+	return (0);
 }

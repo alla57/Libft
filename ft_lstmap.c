@@ -1,28 +1,29 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_memcpy.c                                        :+:      :+:    :+:   */
+/*   ft_lstmap.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: alboumed <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2019/10/12 10:30:13 by alboumed          #+#    #+#             */
-/*   Updated: 2019/11/17 15:45:56 by alboumed         ###   ########.fr       */
+/*   Created: 2019/12/08 17:49:51 by alboumed          #+#    #+#             */
+/*   Updated: 2019/12/08 18:44:49 by alboumed         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
+#include <stdlib.h>
 #include "libft.h"
 
-void	*ft_memcpy(void *dest, const void *src, size_t n)
+t_list	*ft_lstmap(t_list *lst, void *(*f)(void *), void (*del)(void *))
 {
-	size_t i;
+	t_list *map;
 
-	if (!dest && !src)
+	if (!lst || !f)
 		return (NULL);
-	i = 0;
-	while (i < n)
+	if (!(map = ft_lstnew(f(lst->content))))
 	{
-		((char*)dest)[i] = ((unsigned char*)src)[i];
-		i++;
+		ft_lstclear(&map, del);
+		return (NULL);
 	}
-	return (dest);
+	map->next = ft_lstmap(lst->next, f, del);
+	return (map);
 }
