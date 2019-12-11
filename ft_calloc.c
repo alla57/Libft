@@ -6,7 +6,7 @@
 /*   By: alboumed <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/10/16 17:55:08 by alboumed          #+#    #+#             */
-/*   Updated: 2019/11/19 18:06:17 by alboumed         ###   ########.fr       */
+/*   Updated: 2019/12/11 21:18:39 by alboumed         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,5 +21,5 @@ void	*ft_calloc(size_t count, size_t size)
 		return (dest = malloc(count * size));
 	if (!(dest = (void*)malloc(size * count)))
 		return (NULL);
-	return(ft_bzero(dest, count));
+	return (ft_bzero(dest, count));
 }

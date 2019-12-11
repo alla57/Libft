@@ -6,7 +6,7 @@
 #    By: alboumed <marvin@42.fr>                    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2019/10/13 12:42:16 by alboumed          #+#    #+#              #
-#    Updated: 2019/12/08 18:55:52 by alboumed         ###   ########.fr        #
+#    Updated: 2019/12/11 22:47:47 by alboumed         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -50,11 +50,6 @@ SRCS	=	./ft_isascii.c		\
 			./ft_putendl_fd.c	\
 			./ft_strjoin.c		\
 			./ft_strnstr.c		\
-			./ft_isascii.c		\
-			./ft_memcmp.c		\
-			./ft_putnbr_fd.c	\
-			./ft_strlcat.c		\
-			./ft_strrchr.c		\
 
 SRC_BNS	=	./ft_lstnew.c		\
 			./ft_lstadd_front.c	\

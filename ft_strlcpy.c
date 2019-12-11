@@ -6,7 +6,7 @@
 /*   By: alboumed <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/10/14 11:42:41 by alboumed          #+#    #+#             */
-/*   Updated: 2019/11/18 22:57:41 by alboumed         ###   ########.fr       */
+/*   Updated: 2019/12/11 21:42:33 by alboumed         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,7 +19,7 @@ size_t	ft_strlcpy(char *dest, const char *src, size_t dstsize)
 	if (!dstsize)
 		return (ft_strlen(src));
 	i = 0;
-	while (dest[i] && src[i] && i < dstsize - 1)
+	while (src[i] && i < dstsize - 1)
 	{
 		dest[i] = src[i];
 		i++;
