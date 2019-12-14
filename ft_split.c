@@ -6,7 +6,7 @@
 /*   By: alboumed <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/10/19 09:03:39 by alboumed          #+#    #+#             */
-/*   Updated: 2019/12/12 20:22:18 by alboumed         ###   ########.fr       */
+/*   Updated: 2019/12/14 18:38:08 by alboumed         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -72,10 +72,10 @@ char	**ft_split(const char *s, char c)
 
 	i = 0;
 	j = 0;
-	dest = malloc(sizeof(char*) * (ft_count_words(s, c) + 1));
-	if (!dest)
+	if (!(dest = malloc(sizeof(char*) * (ft_count_words(s, c) + 1))))
 		return (NULL);
-	ft_size_words(s, c, dest);
+	if (!(ft_size_words(s, c, dest)))
+		return (NULL);
 	while (s[i] && !(k = 0))
 	{
 		if (s[i] != c)
